@@ -1,4 +1,3 @@
-// Таймер обратного отсчёта до 21 июня 2026, 14:00 (Волгоград, UTC+3)
 document.addEventListener('DOMContentLoaded', function() {
     function getEventDate() {
         const targetOffsetMinutes = -180; // Волгоград UTC+3
@@ -29,17 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (86400000)) / (3600000));
         const minutes = Math.floor((diff % 3600000) / 60000);
-        const seconds = Math.floor((diff % 60000) / 1000);
 
         const daysEl = document.getElementById('days');
         const hoursEl = document.getElementById('hours');
         const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
 
         if (daysEl) daysEl.innerText = days;
         if (hoursEl) hoursEl.innerText = hours;
         if (minutesEl) minutesEl.innerText = minutes;
-        if (secondsEl) secondsEl.innerText = seconds;
     }
 
     updateTimer();
